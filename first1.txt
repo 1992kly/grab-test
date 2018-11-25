@@ -1,0 +1,32 @@
+int sumto(int nums[],int len, int tar)
+{
+    int low = 0;
+    int heigh = len-1;
+    if(tar<2*nums[low]||tar>2*nums[heigh])
+        return 0;
+    while(low<heigh)
+        if(nums[low]+nums[heigh]<tar)
+            low++;
+        else if(nums[low]+nums[heigh]>tar)
+            heigh--;
+        else 
+            {
+                int lc =1,hc = 1;
+                low++;
+                heigh--;
+                whiel(nums[low]==nums[low--])
+                {
+                    lc++;
+                    low++;
+                }
+                whiel(nums[heigh] == nums[heigh++])
+                {
+                    hc++;
+                    heigh--;
+                }
+                for(int i=0;i<lc*hc;i++)
+                    printf("[%d,%d]",nums[low--],nums[heigh++]);
+            }
+}
+
+		
